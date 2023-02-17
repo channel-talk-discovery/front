@@ -1,0 +1,55 @@
+@keyframes bounceUp {
+    from {
+        transform: translateY(0) scale(10%);
+        opacity: 0%;
+    }
+
+    to {
+        transform: translateY(-200px) scale(60%);
+        opacity: 100%;
+    }
+}
+
+@keyframes Rise {
+    0% {
+        transform: translateY(-200px) scale(0%);
+        opacity: 0%;
+    }
+
+    50% {
+        transform: translateY(-400px) scale(0%);  
+        opacity: 0%;
+    }
+
+    100% {
+        transform: translateY(-400px) scale(100%);
+        opacity: 100%;
+    }
+}
+
+.banner{
+    animation-name: bounceUp;
+    animation-duration: 1s;
+    animation-timing-function: ease-icubic-bezier(0,.72,.84,1.37)n;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+
+}
+
+.texxt{
+    animation-name: Rise;
+    animation-duration: 2s;
+    animation-timing-function: ease-icubic-bezier(0,.72,.84,1.37)n;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+
+    text-align: center;
+    font-size: 70px;
+    color: white;
+    margin: 0 0 50px 0;
+    font-weight: Bolder;
+}

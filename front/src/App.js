@@ -4,6 +4,7 @@ import Main from "./pages/Main";
 import Detail from "./pages/Detail";
 import MyPage from "./pages/myPage";
 import InMap from "./pages/inMap";
+import Reward from "./pages/reward";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/detail" element= { <Detail/>}/>
           <Route path="/myPage" element={ <MyPage/> }/>
           <Route path="/inMap" element={ <InMap/> } />
+          <Route path="/reward" element={ <Reward/> }/>
         </Routes>
       </BrowserRouter>
     </div>

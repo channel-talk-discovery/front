@@ -187,7 +187,7 @@ const Home = () => {
              backgroundColor: mainColor
         }}>
           {/* Hero unit */}
-          <div className="buttonHolder"> <input type="button" value="Mypage" className="myPageButton" onClick={()=>{ navigate("/myPage") }}/> </div>
+          <div className="buttonHolder"> <input type="button" value="Mypage" className="myPageButton" onClick={()=>{ navigate("/inMap", { state: { region: "Dobong-gu" } }) }}/> </div>
           <Box
             sx={{
               bgcolor: 'background.paper',
