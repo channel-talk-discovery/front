@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Main from "./pages/Main";
 import Detail from "./pages/Detail";
 import MyPage from "./pages/myPage";
+import InMap from "./pages/inMap";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/main" element= { <Main/> }/>
           <Route path="/detail" element= { <Detail/>}/>
           <Route path="/myPage" element={ <MyPage/> }/>
+          <Route path="/inMap" element={ <InMap/> } />
         </Routes>
       </BrowserRouter>
     </div>
