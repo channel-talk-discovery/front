@@ -3,45 +3,57 @@ import axios from 'axios'
 
 export const cards = [
     {
-        id: 1,
-        image: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80",
+        placeId: 1,
+        imageUrl: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80",
         alt: "random",
-        desc: "서울시 마포구 서교동 450"
+        mainAddressHint: "서울시 마포구 서교동 450",
+        subAddressHint: "논현로",
+        uuid: "Yongsan-gu"
     },
 
     {
-        id: 2,
-        image: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80",
+        placeId: 2,
+        imageUrl: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80",
         alt: "random",
-        desc: "서울시 마포구 서교동 450"
+        mainAddressHint: "서울시 마포구 서교동 450",
+        subAddressHint: "논현로",
+        uuid: "Yongsan-gu"
 
     },
     {
-        id: 3,
-        image: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80",
+        placeId: 3,
+        imageUrl: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80",
         alt: "random",
-        desc: "서울시 마포구 서교동 450"
+        mainAddressHint: "서울시 마포구 서교동 450",
+        subAddressHint: "논현로",
+        uuid: "Yongsan-gu"
 
     },
     {
-        id: 4,
-        image: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80",
+        placeId: 4,
+        imageUrl: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80",
         alt: "random",
-        desc: "서울시 마포구 서교동 450"
+        mainAddressHint: "서울시 마포구 서교동 450",
+        subAddressHint: "논현로",
+        uuid: "Yongsan-gu"
 
     },
     {
-        id: 5,
-        image: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80",
+        placeId: 5,
+        imageUrl: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80",
         alt: "random",
-        desc: "서울시 마포구 서교동 450"
+        mainAddressHint: "서울시 마포구 서교동 450",
+        subAddressHint: "논현로",
+        uuid: "Yongsan-gu"
 
     },
     {
-        id: 6,
-        image: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80",
+        placeId: 6,
+        imageUrl: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80",
         alt: "random",
-        desc: "서울시 마포구 서교동 450"
+        mainAddressHint: "서울시 마포구 서교동 450",
+        subAddressHint: "논현로",
+        uuid: "Yongsan-gu"
     },
 ]
 

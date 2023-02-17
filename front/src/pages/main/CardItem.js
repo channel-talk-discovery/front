@@ -11,12 +11,12 @@ export default function CardItem({ card }) {
     const navigate = useNavigate()
 
     return (
-        <Grid item key={card.id} xs={12} sm={6} md={4}>
-            <Card sx={{ boxShadow: 0 }} onClick={() => navigate(`/detail`, { state: { card } })}
+        <Grid item key={card.placeId} xs={12} sm={6} md={4}>
+            <Card sx={{ boxShadow: 0 }} onClick={() => navigate(`/inMap`, { state: { card } })}
             >
                 <CardMedia
                     component="img"
-                    image={card.image}
+                    image={card.imageUrl}
                     alt={card.alt}
                     style={{
                         display: 'block',
@@ -28,7 +28,7 @@ export default function CardItem({ card }) {
                 />
                 <CardContent sx={{ flexGrow: 1 }}>
                     <Typography variant="body1">
-                        <b>{card.desc} </b>
+                        <b>{card.mainAddressHint} </b>
                     </Typography>
                     <Typography variant="body1">
                         100km 거리

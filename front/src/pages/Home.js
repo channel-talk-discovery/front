@@ -108,9 +108,6 @@ const Home = () => {
                         이 장소에서 사진을 찍겠습니다!
                       </Typography>
                     </CardContent>
-                    <CardActions>
-                      <Button size="small" onClick={() => {setSelectedCountry(id);}}>Lets Go!</Button>
-                    </CardActions>
                   </Card>
                 </Grid>
         );
@@ -119,7 +116,7 @@ const Home = () => {
         return(
             <Grid item key={id} xs={12} sm={6} md={4} >
                   <Card
-                    sx={{ height: '100%', display: 'flex', flexDirection: 'column' }} style={{
+                    sx={{ height: '100%', display: 'flex', flexDirection: 'column', boxShadow: "none" }} style={{
                         backgroundColor: cardColor,
                         borderRadius: "30px",
                         cursor: "pointer",
@@ -151,9 +148,6 @@ const Home = () => {
                         이 장소에서 사진을 찍겠습니다!
                       </Typography>
                     </CardContent>
-                    <CardActions>
-                      <Button size="small" onClick={() => {setSelectedCountry(id);}}>Lets Go!</Button>
-                    </CardActions>
                   </Card>
                 </Grid>
         );

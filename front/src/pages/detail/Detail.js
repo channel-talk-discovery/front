@@ -85,7 +85,7 @@ const Detail = () => {
                     >
                         <CardMedia
                             component="img"
-                            image={card.image}
+                            image={card.imageUrl}
                             alt={card.alt}
                             style={{
                                 display: 'block',
