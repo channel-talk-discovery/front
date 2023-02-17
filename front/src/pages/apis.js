@@ -65,5 +65,5 @@ export const uploadImageS3 = async (image) => {
 
 export const getImageCompareResult = async (url) => {
     // TODO: send real API request
-    return "fail"
+    return "D"
 }

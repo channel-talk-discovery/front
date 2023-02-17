@@ -6,14 +6,11 @@ import { getMainCards } from "../apis";
 import CardItem from "./CardItem";
 
 export default function CardContainer({ tab }) {
-    console.log(tab)
-
     const [cards, setCards] = useState([])
 
     useEffect(() => {
         async function fetchData() {
             const filter = tabs[tab].value
-            console.log(filter)
             const newCards = await getMainCards(filter)
             setCards(newCards)
         }

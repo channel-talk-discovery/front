@@ -22,6 +22,7 @@ const Detail = () => {
     const [uploadedImageUrl, setUploadedImageUrl] = useState(null)
     const [selectedImage, setSelectedImage] = useState(null)
     const [result, setResult] = useState(null)
+    const [success, setSuccess] = useState(false)
 
     useEffect(() => {
         const uploadImage = async () => {
@@ -46,24 +47,23 @@ const Detail = () => {
     }, [uploadedImageUrl])
 
     useEffect(() => {
-        if (result === "A") {
-
-            return
+        console.log("result is ", result)
+        if (result !== null && result !== "fail") {
+            setSuccess(true)
         }
-
     }, [result])
 
     return (
         <div>
-            <div style={{ position: "fixed", left: 0, top: 0, zIndex: 2, height: "100%", width: "100%" }}>
-                <RewardAnimation />
-            </div>
+            {success &&
+                <div style={{ position: "fixed", left: 0, top: 0, zIndex: 2, height: "100%", width: "100%" }}>
+                    <RewardAnimation result={result} />
+                </div>
+            }
 
-            <div style={{ position: "fixed", left: 0, top: 0, zIndex: 1, height: "100%", width: "100%", opacity: 0.7, backgroundColor: "black" }}>
-            </div>
+            <div style={{ display: success ? "block" : "none", position: "fixed", left: 0, top: 0, zIndex: 1, height: "100%", width: "100%", opacity: 0.7, backgroundColor: "black" }} />
 
-
-            <div className="detail" style={{ opacity: 0.7 }}>
+            <div className="detail" style={{ opacity: success ? 0.7 : 1 }}>
                 <div style={{
                     display: "flex",
                     alignItems: "center",
