@@ -47,18 +47,6 @@ const Reward = () => {
     return(
         <ThemeProvider theme={theme}>
         <CssBaseline />
-        <AppBar position="relative" style={ {
-                backgroundColor: headerColor,
-                alignItems: "center",
-            } }>
-          <Toolbar>
-            <Typography variant="h6" color="inherit" noWrap >
-                <img src={logo} style={{
-                    height: "50px"
-                }} alt="ImHere Logo" onClick={()=>{navigate("/")}}/>
-            </Typography>
-          </Toolbar>
-        </AppBar>
         <main style={{ 
              backgroundColor: mainColor
         }}>
@@ -83,7 +71,7 @@ const Reward = () => {
                         cursor: "pointer",
                     }}
                   >
-                    <img src={Diamond} className="banner"/>\
+                    <img src={Diamond} className="banner"/>
                     <div className='texxt'> 축하합니다! </div>
                     <div className='texxt'> A등급의 정확도입니다! </div>
                   </Card>

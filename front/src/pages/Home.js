@@ -171,23 +171,11 @@ const Home = () => {
     return(
         <ThemeProvider theme={theme}>
         <CssBaseline />
-        <AppBar position="relative" style={ {
-                backgroundColor: headerColor,
-                alignItems: "center",
-            } }>
-          <Toolbar>
-            <Typography variant="h6" color="inherit" noWrap >
-                <img src={logo} style={{
-                    height: "50px"
-                }} alt="ImHere Logo" onClick={()=>{navigate("/")}}></img>
-            </Typography>
-          </Toolbar>
-        </AppBar>
         <main style={{ 
              backgroundColor: mainColor
         }}>
           {/* Hero unit */}
-          <div className="buttonHolder"> <input type="button" value="Mypage" className="myPageButton" onClick={()=>{ navigate("/inMap", { state: { region: "Dobong-gu" } }) }}/> </div>
+          <div className="buttonHolder"> <input type="button" value="마이페이지" className="myPageButton" onClick={()=>{ navigate("/myPage") }}/> </div>
           <Box
             sx={{
               bgcolor: 'background.paper',

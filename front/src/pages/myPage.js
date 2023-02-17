@@ -16,6 +16,7 @@ import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { borderColor, borderRadius } from "@mui/system";
 import { useNavigate }  from "react-router-dom";
+import axios from 'axios';
 
 import logo from "./logoImage/ImHereLogo.png";
 const mainColor = "#ffb03b";
@@ -25,6 +26,20 @@ const cardColor = "#ffc261";
 const MyPage = () => {
     const navigate = useNavigate();
     const theme = createTheme();
+    const [ nickname, setNickname ] = React.useState("");
+    const [ pointSum, setPointSum ] = React.useState("");
+    const [ profileURL, setProfileURL ] = React.useState("");
+    React.useEffect( () => {
+        axios.get("http://13.125.129.137/user/my-page").then(res => { 
+            console.log(res);
+            const firstData = res.data.data[0];
+            setNickname(firstData.nickname);
+            setProfileURL(firstData.profileImageUrl);
+            setPointSum(firstData.point_sum);
+         });
+         console.log(nickname);
+    } )
+
     function Copyright() {
         return (
           <Typography variant="body2" color="text.secondary" align="center">
@@ -40,22 +55,11 @@ const MyPage = () => {
     return(
         <ThemeProvider theme={theme}>
         <CssBaseline />
-        <AppBar position="relative" style={ {
-                backgroundColor: headerColor,
-                alignItems: "center",
-            } }>
-          <Toolbar>
-            <Typography variant="h6" color="inherit" noWrap >
-                <img src={logo} style={{
-                    height: "50px"
-                }} alt="ImHere Logo" onClick={()=>{navigate("/")}}></img>
-            </Typography>
-          </Toolbar>
-        </AppBar>
         <main style={{ 
              backgroundColor: mainColor
         }}>
           {/* Hero unit */}
+          <div className="buttonHolder"> <input type="button" value="홈으로" className="myPageButton" onClick={()=>{ navigate("/") }}/> </div>
           <Box
             sx={{
               bgcolor: 'background.paper',
@@ -69,6 +73,14 @@ const MyPage = () => {
           </Box>
           <Container sx={{ py: 8 }} maxWidth="md">
             {/* End hero unit */}
+            <Typography variant="h3" style={{
+                        color: "#ffffff",
+                        fontWeight: "bolder",
+                        fontSize: "60px",
+                        padding: "0 0 10% 0",
+                      }}>
+                        마이페이지
+                      </Typography>
             <Card
                     sx={{ height: '100%', display: 'flex', flexDirection: 'column' }} style={{
                         backgroundColor: cardColor,
@@ -80,26 +92,27 @@ const MyPage = () => {
                     <CardMedia
                       component="img"
                       sx={{
-                        padding: "25% 25% 25% 25%",
+                        padding: "5% 5% 5% 5%",
                       }}
-                      src={logo}//"https://source.unsplash.com/random"
+                      src={profileURL}//"https://source.unsplash.com/random"
                       alt="random"
                     />
                     <CardContent sx={{ flexGrow: 1 }}>
                       <Typography gutterBottom variant="h3" component="h2" style={{
+                        padding: "0 0 0 5%",
                         color: "#ffffff",
+                        fontWeight: "bolder"
                       }}>
-                        닉네임: 나는 자연인이다
+                        닉네임: {nickname}
                       </Typography>
                       <Typography variant="h3" style={{
                         color: "#ffffff",
+                        fontWeight: "bolder",
+                        padding: "0 0 0 5%",
                       }}>
-                        포인트: 2111112112112121점
+                        포인트: {pointSum}
                       </Typography>
                     </CardContent>
-                    <CardActions>
-                      <Button size="small">Lets Go!</Button>
-                    </CardActions>
                   </Card>
           </Container>
         </main>
