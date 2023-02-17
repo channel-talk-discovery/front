@@ -179,7 +179,7 @@ const Home = () => {
             <Typography variant="h6" color="inherit" noWrap >
                 <img src={logo} style={{
                     height: "50px"
-                }} alt="ImHere Logo"></img>
+                }} alt="ImHere Logo" onClick={()=>{navigate("/")}}></img>
             </Typography>
           </Toolbar>
         </AppBar>
@@ -187,6 +187,7 @@ const Home = () => {
              backgroundColor: mainColor
         }}>
           {/* Hero unit */}
+          <div className="buttonHolder"> <input type="button" value="Mypage" className="myPageButton" onClick={()=>{ navigate("/myPage") }}/> </div>
           <Box
             sx={{
               bgcolor: 'background.paper',

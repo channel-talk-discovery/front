@@ -13,3 +13,21 @@
     padding: 10px;
     margin: 0 0 0 30px;
 }
+
+.myPageButton{
+    border: 0 0 0 200px;
+    background-color: #ffffff;
+    width: 200px;
+    height: 60px;
+    padding: 10 10 10 10;
+    border-style: none;
+    border-radius: 30px;
+    margin: 30px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.buttonHolder{
+    display: flex;
+    flex-direction: row-reverse;
+}
