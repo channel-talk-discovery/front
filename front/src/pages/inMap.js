@@ -15,7 +15,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { borderColor, borderRadius } from "@mui/system";
-import { useNavigate}  from "react-router-dom";
+import { useNavigate, useLocation}  from "react-router-dom";
 import "../css/inMap.css";
 
 import logo from "./logoImage/ImHereLogo.png";
@@ -24,12 +24,14 @@ const headerColor = "#ff932e";
 const cardColor = "#ffc261";
 
 const InMap = () => {
+    const {state} = useLocation();
+
     React.useEffect(()=>{
-        document.getElementById("Dobong-gu").setAttribute("fill", "red");
+        console.log(state);
+        document.getElementById(state.region).setAttribute("fill", "red");
     })
     const navigate = useNavigate();
     const theme = createTheme();
-    const region = "Dobong-gu";
 
 
     function Copyright() {
