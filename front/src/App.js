@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import Main from "./pages/Main";
-import Detail from "./pages/Detail";
+import Main from "./pages/main/Main";
+import Detail from "./pages/detail/Detail";
 import MyPage from "./pages/myPage";
 import InMap from "./pages/inMap";
 import Reward from "./pages/reward";
