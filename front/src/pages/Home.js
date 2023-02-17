@@ -41,12 +41,11 @@ const Home = () => {
     function Copyright() {
         return (
           <Typography variant="body2" color="text.secondary" align="center">
-            {'Copyright © '}
+            
             <Link color="inherit" href="https://mui.com/">
-              Your Website
+              
             </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
+            
           </Typography>
         );
       }
@@ -232,7 +231,7 @@ const Home = () => {
             backgroundColor: mainColor,
         }}>
           <Typography variant="h6" align="center" gutterBottom>
-            Footer
+            
           </Typography>
           <Typography
             variant="subtitle1"
@@ -240,7 +239,7 @@ const Home = () => {
             color="text.secondary"
             component="p"
           >
-            Something here to give the footer a purpose!
+           
           </Typography>
           <Copyright />
         </Box>
