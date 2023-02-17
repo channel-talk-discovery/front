@@ -24,7 +24,7 @@ export default function MainTabs({ handleTabChange, initialTab }) {
   };
 
   return (
-    <div style={{ display: 'flex', justifyContent: "center", alignItems: "center" }}>
+    <div style={{ display: 'flex', justifyContent: "center", alignItems: "center", overflow: "scroll" }}>
       <Tabs value={initialTab} onChange={handleChange}>
         {tabs.map((tab) => <Tab id={tab.id} key={tab.id} label={tab.label} icon={tab.icon} iconPosition="top" />)}
       </Tabs>
