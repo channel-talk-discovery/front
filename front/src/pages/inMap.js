@@ -27,13 +27,68 @@ const InMap = () => {
 	const { state } = useLocation();
 
 	React.useEffect(() => {
-		console.log(state);
-		document.getElementById(state.region).setAttribute("fill", "red");
+		console.log(state.card.uuid);
+		document.getElementById(state.card.uuid).setAttribute("fill", "red");
 	})
 	const navigate = useNavigate();
 	const theme = createTheme();
-
-
+    const regions = ["Dobong-gu",
+    "Dongdaemun-gu",
+    "Dongjak-gu",
+    "Eunpyeong-gu",
+    "Gangbuk-gu",
+    "Gangdong-gu",
+    "Gangseo-gu",
+    "Geumcheon-gu",
+    "Guro-gu",
+    "Gwanak-gu",
+    "Gwangjin-gu",
+    "Gangnam-gu",
+    "Jongno-gu",
+    "Jung-gu",
+    "Jungnang-gu",
+    "Mapo-gu",
+    "Nowon-gu",
+    "Seocho-gu",
+    "Seodaemun-gu",
+    "Seongbuk-gu",
+    "Seongdong-gu",
+    "Songpa-gu",
+    "Yangcheon-gu",
+    "Yeongdeungpo-gu_1_",
+    "Yongsan-gu"];
+    const korean = [
+        "동봉구",
+        "동대문구",
+        "동작구",
+        "은평구",
+        "강북구",
+        "강동구",
+        "강서구",
+        "금천구",
+        "구로구",
+        "관악구",
+        "광진구",
+        "강남구",
+        "종로구",
+        "중구",
+        "중랑구",
+        "마포구",
+        "노원구",
+        "서초구",
+        "서대문구",
+        "성북구",
+        "성동구",
+        "송파구",
+        "양천구",
+        "여의도구",
+        "용산구"
+    ];
+    const translate = ({ place }) => {
+        const index = regions.findIndex((e) => { return (place === e); });
+        console.log(regions.length);
+        return korean[index];
+    }
 	function Copyright() {
 		return (
 			<Typography variant="body2" color="text.secondary" align="center">
@@ -428,7 +483,7 @@ const InMap = () => {
 							<Typography gutterBottom variant="h3" component="h2" style={{
 								color: "#ffffff",
 							}}>
-								서울특별시 도봉구
+								서울특별시 { translate({place : state.card.uuid}) }
 							</Typography>
 							<Typography variant="h5" style={{
 								color: "#ffffff",
