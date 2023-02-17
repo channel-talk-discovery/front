@@ -1,4 +1,4 @@
-import { AlertTitle, Button } from "@mui/material";
+import { AlertTitle, AppBar, Button } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Card from '@mui/material/Card';
@@ -8,6 +8,8 @@ import Typography from '@mui/material/Typography';
 import { getImageCompareResult, uploadImageS3 } from "../apis"
 import Alert from '@mui/material/Alert';
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
+import IconButton from '@mui/material/IconButton';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
 const Detail = () => {
     const { state } = useLocation()
@@ -51,7 +53,7 @@ const Detail = () => {
     }, [result])
 
     return (
-        <div className="detail" style={{ height: 850 }}>
+        <div className="detail">
             <div style={{
                 display: "flex",
                 alignItems: "center",
@@ -62,9 +64,11 @@ const Detail = () => {
                     alignItems: "start",
                     flexDirection: "row",
                     width: "100%",
-                    marginLeft: 15
                 }}>
-                    <Button onClick={() => navigate("/main")}> 목록으로 돌아가기 </Button>
+                    <IconButton onClick={() => navigate("/main")} size="large">
+                        <ArrowBackIosIcon />
+                    </IconButton>
+
                 </div>
 
                 <Card sx={{ boxShadow: 0, width: "100%" }}
@@ -129,7 +133,7 @@ const Detail = () => {
                             style={{
                                 display: 'block',
                                 objectFit: 'cover',
-                                width: '100%',
+                                // width: '100%',
                                 height: 300,
                             }}
                         /> :
@@ -148,18 +152,16 @@ const Detail = () => {
                         </div>
                     }
                 </Card>
-
-                {(result === "fail") &&
-                    <div style={{ position: "absolute", bottom: 0, width: "100%" }}>
-                        <Alert severity="error" color="error">
-                            <AlertTitle> 다시 시도해주세요! </AlertTitle>
-                            동일한 장소로 확인되지 않습니다.
-                        </Alert>
-
-                    </div>
-                }
             </div>
 
+            {(result === "fail") &&
+                <AppBar position="fixed" color="primary" sx={{ top: 'auto', bottom: 0 }}>
+
+                    <Alert severity="error" color="error">
+                        <AlertTitle> 다시 시도해주세요! </AlertTitle>
+                        동일한 장소로 확인되지 않습니다.
+                    </Alert>
+                </AppBar>}
 
 
         </div>
