@@ -49,18 +49,6 @@ const InMap = () => {
     return(
         <ThemeProvider theme={theme}>
         <CssBaseline />
-        <AppBar position="relative" style={ {
-                backgroundColor: headerColor,
-                alignItems: "center",
-            } }>
-          <Toolbar>
-            <Typography variant="h6" color="inherit" noWrap >
-                <img src={logo} style={{
-                    height: "50px"
-                }} alt="ImHere Logo" onClick={()=>{navigate("/")}}></img>
-            </Typography>
-          </Toolbar>
-        </AppBar>
         <main style={{ 
              backgroundColor: mainColor
         }}>
