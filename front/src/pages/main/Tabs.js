@@ -5,6 +5,8 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import AbcIcon from '@mui/icons-material/Abc';
 import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
 import CelebrationIcon from '@mui/icons-material/Celebration';
+import { ThemeProvider } from '@mui/material';
+import { theme } from '../../App'
 
 export const tabs = [
   { id: 0, value: 'all', label: '모두보기', icon: <AbcIcon /> },
@@ -20,12 +22,14 @@ export default function MainTabs({ handleTabChange, initialTab }) {
   };
 
   return (
-    <div style={{width: "100%"}}>
-      <div style={{ display: 'flex', justifyContent: "center", alignItems: "center", overflow: "scroll"}}>
-        <Tabs value={initialTab} onChange={handleChange}>
-          {tabs.map((tab) => <Tab id={tab.id} key={tab.id} label={tab.label} icon={tab.icon} iconPosition="top" />)}
-        </Tabs>
+    <ThemeProvider theme={theme}>
+      <div style={{ width: "100%" }}>
+        <div style={{ display: 'flex', justifyContent: "center", alignItems: "center", overflow: "scroll" }}>
+          <Tabs value={initialTab} onChange={handleChange} style={{ color: "#ffb03b" }}>
+            {tabs.map((tab) => <Tab id={tab.id} key={tab.id} label={tab.label} icon={tab.icon} iconPosition="top" />)}
+          </Tabs>
+        </div>
       </div>
-    </div>
+    </ThemeProvider>
   );
 }

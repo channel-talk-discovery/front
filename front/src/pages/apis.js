@@ -57,25 +57,56 @@ export const cards = [
     },
 ]
 
+// const BASE_URL = "http://13.125.129.137"
+const BASE_URL = "http://localhost:8080"
+
 
 export const getMainCards = async (filter) => {
-    if (filter === "all") {
-        return new Promise((resolve) => { resolve(cards) })
+    let category = undefined
+
+    if (filter === "date") {
+        category = "couple"
+    } else if (filter === "surprise") {
+        category = "surprise"
+    } else if (filter === "alone") {
+        category = "alone"
     }
 
-    return new Promise((resolve) => {
-        resolve([
-            cards[Math.floor(Math.random() * cards.length)]
-        ])
-    })
+    if (category) {
+        const response = await axios.get(`${BASE_URL}/place?category=${category}`)
+        return response.data.data
+    }
+
+    const response = await axios.get(`${BASE_URL}/place`)
+    return response.data.data
 }
 
-export const uploadImageS3 = async (image) => {
-    // TODO: upload image to s3 and get link
-    return "dummy link"
+export const uploadImage = async (image) => {
+    let formData = new FormData()
+    formData.append("imgUpload", image)
+
+    const response = await axios.post(`${BASE_URL}/upload`, formData,
+        { headers: { "Content-Type": "multipart/form-data" } })
+
+    return response.data.fileInfo
 }
 
-export const getImageCompareResult = async (url) => {
+let demo_cnt = 0
+
+export const getImageCompareResult = async (placeId, uploadImageUrl) => {
     // TODO: send real API request
+    demo_cnt += 1
+
+    if (demo_cnt === 1) {
+        return "fail"
+    }
+
+    return "B"
+
+    const response = axios.post(`${BASE_URL}/deepAI/image-similarity`, {
+        placeId,
+        uploadImageUrl: `${BASE_URL}/uploads/${uploadImageUrl}`,
+    })
+    console.log(response.data)
     return "D"
 }

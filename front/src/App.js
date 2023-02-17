@@ -10,11 +10,30 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import logo from "./pages/logoImage/ImHereLogo.png";
 
+let theme = createTheme({
+  palette: {
+    primary: { main:  "#ffb03b" },
+    secondary: { main: "#ffc261" }
+  }
+});
+
+theme = createTheme(theme, {
+  palette: {
+    info: {
+      main: theme.palette.secondary.main,
+    },
+  },
+});
+
+export { theme }
+
+
 function App() {
   const mainColor = "#ffb03b";
   const headerColor = "#ff932e";
   const cardColor = "#ffc261";
-  const theme = createTheme();
+
+
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
