@@ -126,7 +126,7 @@ const InMap = () => {
 							backgroundColor: cardColor,
 							borderRadius: "30px",
 							cursor: "pointer",
-						}} onClick={()=>{console.log(state); navigate({state: {card : state.card}});}}
+						}} onClick={()=>{console.log(state); navigate("/detail", {state: {card : state.card}});}}
 					>
 
 						<div className='svg'>
