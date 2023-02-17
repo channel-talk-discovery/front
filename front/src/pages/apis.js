@@ -57,3 +57,13 @@ export const getMainCards = async (filter) => {
         ])
     })
 }
+
+export const uploadImageS3 = async (image) => {
+    // TODO: upload image to s3 and get link
+    return "dummy link"
+}
+
+export const getImageCompareResult = async (url) => {
+    // TODO: send real API request
+    return "fail"
+}
