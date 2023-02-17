@@ -57,8 +57,8 @@ export const cards = [
     },
 ]
 
-// const BASE_URL = "http://13.125.129.137"
-const BASE_URL = "http://localhost:8080"
+const BASE_URL = "http://13.125.129.137"
+// const BASE_URL = "http://localhost:8080"
 
 
 export const getMainCards = async (filter) => {
